@@ -1,0 +1,120 @@
+body {
+  font-family: "Patrick Hand", cursive;
+  height: 320px;
+  background-color: rgb(253, 255, 237);
+  padding: 0;
+  margin: 0;
+}
+
+.mainContainer {
+  padding: 2%;
+  height: 100%;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+img {
+  filter: grayscale(1);
+}
+
+.title {
+  color: #666;
+  display: flex;
+  justify-content: center;
+}
+#core {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.panel {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+}
+
+#reload-section {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: center;
+}
+#reload-section button {
+  width: 100%;
+}
+
+@keyframes stripe-slide {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+#reloadAllButton,
+.reloadButton {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 36px 22px;
+  background-color: #fff;
+  color: #666;
+  border: 2px solid #666;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+#reloadAllButton:after,
+.reloadButton:after {
+  content: "";
+  display: block;
+  height: 7px;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #666,
+    #666 1px,
+    transparent 2px,
+    transparent 5px
+  );
+  backface-visibility: hidden;
+  border-top: 1px solid #666;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-size: 7px 7px;
+}
+#reloadAllButton:hover,
+.reloadButton:hover {
+  background-color: #666;
+  color: #fff;
+  border-color: #000;
+}
+#reloadAllButton:hover:after,
+.reloadButton:hover:after {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 1px,
+    transparent 2px,
+    transparent 5px
+  );
+  border-top: 1px solid #000;
+  animation: stripe-slide 12s infinite linear forwards;
+}
